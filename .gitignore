@@ -1,0 +1,37 @@
+# Бинарники
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+build/
+
+# Тестовый бинарник
+*.test
+
+# Вывод инструмента покрытия go
+*.out
+coverage.html
+
+# Директории зависимостей
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Окружение
+.env
+.env.local
+
+# Временные файлы
+tmp/
+*.tmp
+*.log
