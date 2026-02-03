@@ -239,7 +239,7 @@ func TestShortener_BuildShortURL(t *testing.T) {
 // mockStorage реализует storage.Storage для тестирования обработки коллизий.
 type mockStorage struct {
 	storage.Storage
-	saveCalls      int
+	saveCalls        int
 	failUntilAttempt int
 }
 

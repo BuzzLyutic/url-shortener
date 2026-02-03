@@ -184,7 +184,7 @@ func isUniqueViolation(err error) bool {
 		return false
 	}
 	// PostgreSQL 23505 код ошибки = unique_violation
-	return errors.Is(err, sql.ErrNoRows) == false &&
+	return !errors.Is(err, sql.ErrNoRows) &&
 		(errorContains(err, "23505") || errorContains(err, "unique constraint"))
 }
 
@@ -192,8 +192,7 @@ func errorContains(err error, substr string) bool {
 	if err == nil {
 		return false
 	}
-	return errors.Is(err, sql.ErrNoRows) == false &&
-		(err.Error() != "" && contains(err.Error(), substr))
+	return !errors.Is(err, sql.ErrNoRows) && contains(err.Error(), substr)
 }
 
 func contains(s, substr string) bool {

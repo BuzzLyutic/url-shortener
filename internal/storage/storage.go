@@ -31,8 +31,8 @@ func (u *URL) IsExpired() bool {
 
 // Storage определяет интерфейс хранилища URL
 type Storage interface {
-	Save(url URL) error // Save хранит новое отображение URL.
-	GetByCode(code string) (*URL, error) // GetByCode возвращает URL по короткому коду.
+	Save(url URL) error                                // Save хранит новое отображение URL.
+	GetByCode(code string) (*URL, error)               // GetByCode возвращает URL по короткому коду.
 	GetByOriginalURL(originalURL string) (*URL, error) // GetByOriginalURL возвращает новый URL по оригинальной ссылке.
-	Close() error // Close закрывает хранилище и освобождает ресурсы.
+	Close() error                                      // Close закрывает хранилище и освобождает ресурсы.
 }
