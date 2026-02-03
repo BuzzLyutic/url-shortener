@@ -1,4 +1,4 @@
-.PHONY: build run test lint clean
+.PHONY: build run test lint clean docker-build docker-up docker-down
 
 # Сборка бинарника
 build:
@@ -43,3 +43,23 @@ postgres-up:
 # Остановка Postgres
 postgres-down:
 	docker stop postgres-dev && docker rm postgres-dev
+
+# Команды Docker
+docker-build:
+	docker build -t url-shortener .
+
+docker-up:
+	docker-compose up --build -d
+
+docker-down:
+	docker-compose down
+
+docker-logs:
+	docker-compose logs -f app
+
+# Запуск с хранилищем в памяти в Docker
+docker-up-memory:
+	docker-compose -f docker-compose.memory.yml up --build -d
+
+docker-down-memory:
+	docker-compose -f docker-compose.memory.yml down

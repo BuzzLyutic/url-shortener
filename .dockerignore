@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+
+# Артефакты сборки
+bin/
+*.exe
+*.test
+*.out
+
+# Документация
+*.md
+!README.md
+
+# Локальный конфиг
+.env
+.env.local
+
+# Покрытие тестами
+coverage.out
+coverage.html
+
+# Docker
+Dockerfile
+docker-compose.yml
