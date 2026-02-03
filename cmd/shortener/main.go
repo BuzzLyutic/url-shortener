@@ -49,7 +49,7 @@ func run() error {
 
 	// Инициализация сервиса
 	svc := service.New(store, service.Config{
-		BaseURL: cfg.BaseURL,
+		BaseURL:    cfg.BaseURL,
 		DefaultTTL: cfg.DefaultTTL,
 	})
 
@@ -66,11 +66,11 @@ func run() error {
 	httpHandler = handler.Recovery(logger)(httpHandler)
 
 	server := &http.Server{
-		Addr: cfg.ServerAddress,
-		Handler: httpHandler,
-		ReadTimeout: 15 * time.Second,
+		Addr:         cfg.ServerAddress,
+		Handler:      httpHandler,
+		ReadTimeout:  15 * time.Second,
 		WriteTimeout: 15 * time.Second,
-		IdleTimeout: 60 * time.Second,
+		IdleTimeout:  60 * time.Second,
 	}
 
 	// Graceful shutdown
