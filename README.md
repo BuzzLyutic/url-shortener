@@ -1,7 +1,7 @@
 # URL Shortener
 
 ![CI](https://github.com/BuzzLyutic/url-shortener/actions/workflows/ci.yml/badge.svg)
-![Go Version](https://img.shields.io/badge/Go-1.25+-00ADD8?style=flat&logo=go)
+![Go Version](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go)
 [![codecov](https://codecov.io/gh/BuzzLyutic/url-shortener/branch/main/graph/badge.svg)](https://codecov.io/gh/BuzzLyutic/url-shortener)
 
 Сервис сокращения ссылок на Go.
