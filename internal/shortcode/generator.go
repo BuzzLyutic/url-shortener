@@ -13,7 +13,7 @@ const Length = 10
 // Константа alphabet содержит все валидные символы для генерации:
 const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"
 
-const alphabetLen = uint64(len(alphabet)) // 63
+const alphabetLen = uint64(len(alphabet))
 
 // Generate создает детерминированный код из ссылки
 // Параметр attempt используется для обработки возможных коллизий:

@@ -27,7 +27,6 @@ func (s *MemoryStorage) Save(url URL) error {
 	// Проверка существования кода
 	if existing, ok := s.byCode[url.ShortCode]; ok {
 		if existing.OriginalURL == url.OriginalURL {
-			// один URL должен соответствовать одному и тому же коду
 			return nil
 		}
 		return ErrAlreadyExists

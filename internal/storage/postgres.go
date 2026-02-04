@@ -178,12 +178,10 @@ func (s *PostgresStorage) Ping(ctx context.Context) error {
 	return s.db.PingContext(ctx)
 }
 
-// isUniqueViolation проверяет наличие нарушения ограничения уникальности
 func isUniqueViolation(err error) bool {
 	if err == nil {
 		return false
 	}
-	// PostgreSQL 23505 код ошибки = unique_violation
 	return !errors.Is(err, sql.ErrNoRows) &&
 		(errorContains(err, "23505") || errorContains(err, "unique constraint"))
 }

@@ -60,12 +60,10 @@ func TestHandler_Shorten(t *testing.T) {
 	t.Run("duplicate URL returns 200", func(t *testing.T) {
 		body := `{"url": "https://example.com/duplicate"}`
 
-		// Первый запрос
 		req1 := httptest.NewRequest(http.MethodPost, "/api/shorten", strings.NewReader(body))
 		rec1 := httptest.NewRecorder()
 		mux.ServeHTTP(rec1, req1)
 
-		// Второй запрос
 		req2 := httptest.NewRequest(http.MethodPost, "/api/shorten", strings.NewReader(body))
 		rec2 := httptest.NewRecorder()
 		mux.ServeHTTP(rec2, req2)

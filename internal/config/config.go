@@ -63,7 +63,6 @@ func Load() (*Config, error) {
 		cfg.LogLevel = env
 	}
 
-	// Валидация
 	if err := cfg.Validate(); err != nil {
 		return nil, err
 	}
