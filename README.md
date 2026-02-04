@@ -99,6 +99,8 @@ GET /{code}
 400 |	invalid_json |	Невалидный JSON
 404 |	not_found |	Короткая ссылка не найдена
 
+---
+
 ## Алгоритм генерации
 
 ![alt text](docs/image-1.png)
@@ -118,6 +120,8 @@ GET /{code}
 
 Обработка коллизий: при совпадении хэша добавляется соль и генерируется новый код (до 10 попыток).
 
+---
+
 ## Нагрузочное тестирование
 
 ```bash
@@ -127,6 +131,21 @@ go install github.com/rakyll/hey@latest
 
 # Тест
 hey -n 10000 -c 100 http://localhost:8080/CODE
+```
+
+## Покрытие тестами
+
+| Пакет | Покрытие |
+|-|-|
+| `internal/shortcode` | 100.0% |
+| `internal/storage` | 29.8% |
+| `internal/service` | 90.7% |
+| `internal/handler` | 88.1% |
+| `internal/config` | 16.1% |
+| **Общее** | **46.5%** |
+
+```bash
+go test ./... -cover
 ```
 
 ## Разработка
@@ -145,7 +164,6 @@ make lint
 # Покрытие
 make test-coverage
 
-# E2E тесты
-./scripts/test_e2e.sh
 ```
+
 ---

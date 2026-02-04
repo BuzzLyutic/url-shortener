@@ -133,7 +133,6 @@ func TestPostgresStorage_Expiration(t *testing.T) {
 	}
 	_ = s.Save(url)
 
-	// Должен вернуть ErrExpired
 	_, err := s.GetByCode("expired123")
 	if err != ErrExpired {
 		t.Errorf("GetByCode() error = %v, want %v", err, ErrExpired)
